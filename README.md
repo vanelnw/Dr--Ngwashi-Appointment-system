@@ -58,7 +58,7 @@ After you're finished please remove all the comments and instructions!
 
 > Describe your project in 1 or 2 sentences.
 
-**[Datatellers]** is a personal application to help Dr. Ngwashi, a gynecologist, to manage schedules with her patients at her newly opened centre.
+**[This]** is a personal application to help Dr. Ngwashi, a gynecologist, to manage schedules with her patients at her newly opened centre.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -106,7 +106,7 @@ After you're finished please remove all the comments and instructions!
 
 > Add a link to your deployed project.
 
-- [Live Demo Link is not yet availablle]()
+- [Live Demo Link](https://datatellers-test.onrender.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
