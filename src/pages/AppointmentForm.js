@@ -71,9 +71,10 @@ function AppointmentForm() {
         ...values,
         code: generateCode(),
       };
+      console.log(newValues)
       dispatch(addRecord(newValues));
       message.success("Submit success!");
-      dispatch(setHomePage("home"))
+     dispatch(setHomePage("home"))
     }
   };
 
@@ -163,7 +164,7 @@ function AppointmentForm() {
                 label="Appointment Status      "
                 rules={[]}
               >
-                <Select placeholder="Pending" defaultValue="pending         ">
+                <Select placeholder="Pending" >
                   <Option value="pending">Pending</Option>
                   <Option value="passed">Passed</Option>
                   <Option value="resheduled">Resheduled</Option>
