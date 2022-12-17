@@ -10,7 +10,6 @@ import {
   TimePicker,
 } from "antd";
 import { ArrowLeftOutlined } from "@ant-design/icons";
-import { useNavigate } from "react-router-dom";
 import dayjs from "dayjs";
 import customParseFormat from "dayjs/plugin/customParseFormat";
 import { useDispatch, useSelector } from "react-redux";
@@ -27,7 +26,6 @@ dayjs.extend(customParseFormat);
 
 function AppointmentForm() {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const [form] = Form.useForm();
   const { Option } = Select;
   const { TextArea } = Input;
@@ -54,7 +52,7 @@ function AppointmentForm() {
     return "A" + SN + DD + MM + YY;
   };
 
-  const IV = {
+  const InitialValues= {
     ...initialValues,
     appointmentDate: formatDate(initialValues.appointmentDate, "DD/MM/YYYY"),
     requestDate: formatDate(initialValues.requestDate, "DD/MM/YYYY"),
@@ -67,7 +65,7 @@ function AppointmentForm() {
       const id = initialValues._id;
       dispatch(updateRecord({ values, id }));
       dispatch(setInitialFormValues());
-      navigate("/");
+      dispatch(setHomePage("home"));
     } else {
       const newValues = {
         ...values,
@@ -94,7 +92,7 @@ function AppointmentForm() {
         <Form
           form={form}
           layout="vertical"
-          initialValues={IV}
+          initialValues={InitialValues}
           onFinish={onFinish}
           onFinishFailed={onFinishFailed}
           autoComplete="off"

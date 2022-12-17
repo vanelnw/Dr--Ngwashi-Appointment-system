@@ -5,33 +5,62 @@ export const columns = [
     title: "Name",
     dataIndex: "name",
     key: "name",
-    sorter: (a, b) => a.name - b.name,
+    sorter: {
+      compare: (a, b) => {
+        if (a.name < b.name) return -1;
+        if (b.name < a.name) return 1;
+        return 0;
+      },
+    },
   },
 
   {
     title: "Code",
     dataIndex: "code",
     key: "code",
-    sorter: (a, b) => a.code - b.code,
+    sorter: {
+      compare: (a, b) => {
+        if (a.code < b.code) return -1;
+        if (b.code < a.code) return 1;
+        return 0;
+      },
+    },
   },
   {
     title: "Age",
     dataIndex: "age",
     key: "age",
-    sorter: (a, b) => a.age - b.age,
+    sorter: {
+      compare: (a, b) => {
+        if (a.age < b.age) return -1;
+        if (b.age < a.age) return 1;
+        return 0;
+      },
+    },
   },
   {
     title: "Address",
     dataIndex: "address",
     key: "address",
-    sorter: (a, b) => a.address - b.address,
+    sorter: {
+      compare: (a, b) => {
+        if (a.address < b.address) return -1;
+        if (b.address < a.address) return 1;
+        return 0;
+      },
+    },
   },
   {
     title: "Phone",
     dataIndex: "phone",
     key: "phone",
-    defaultSortOrder: "descend",
-    sorter: (a, b) => a.phone - b.phone,
+    sorter: {
+      compare: (a, b) => {
+        if (a.phone < b.phone) return -1;
+        if (b.phone < a.phone) return 1;
+        return 0;
+      },
+    },
   },
   {
     title: "Status",
@@ -42,7 +71,13 @@ export const columns = [
         {status}
       </Tag>
     ),
-    sorter: (a, b) => a.status - b.status,
+    sorter: {
+      compare: (a, b) => {
+        if (a.status < b.status) return -1;
+        if (b.status < a.status) return 1;
+        return 0;
+      },
+    },
   },
 ];
 
@@ -57,4 +92,3 @@ const getColor = (status) => {
     return "blue";
   }
 };
-
